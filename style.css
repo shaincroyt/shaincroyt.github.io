@@ -1,15 +1,22 @@
 body{
-    margin: 0 160px 0 160px;
+  margin: 0;
+  
+}
+
+@font-face {
+    font-family: sans-serif;
+    src: url();
 }
 
 .cuerpo{
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 15px;
     grid-template-columns: 300px 1fr 300px;
     grid-template-rows: 80px auto ;
-    width: 100%;
     background-color: #fff;
     color: #444;
+    max-width: 1555px;  
+    margin: 0 auto;     
 }
 a{
     text-decoration: none;
@@ -29,12 +36,13 @@ a{
     grid-column: 1 / 4;
     margin: -5px 0 0 0;
     background-color: white;
+    font-family: sans-serif;
 }
 
 #header{
     display:  flex;
     gap: 25px;
-    flex-wrap: wrap; /* Para que no se rompa en pantallas pequeñas */
+    flex-wrap: wrap;
 }
 
 /* Laterales y centro */
@@ -45,6 +53,7 @@ a{
     height: fit-content;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
+    font-family: sans-serif;
 }
 
 .center {
@@ -59,9 +68,14 @@ a{
     height: fit-content;
     grid-column: 3 / 4;
     grid-row: 2 / 3;
+    font-family: sans-serif;
 }
 
 /*-------------------sandwich-----------------*/
+.sandwich{
+    display: block;
+    position: relative;
+}
 .menu-sandwich{
     margin-top: 5px;
     width: 30px;
@@ -75,7 +89,7 @@ a{
     cursor: pointer;
     user-select: none;
     position: relative; 
-    z-index: 2000; /* que siempre quede encima */
+    z-index: 2000;
     color: #000;
 }
 
@@ -83,9 +97,9 @@ a{
 .menu-caja {
     background-color: white;
     font-size: 15px;
-    position: absolute;
-    top: 60px;
-    left: 170px;
+    position: absolute; 
+    top: 100%;  
+    left: 0;    
     width: 200px;
     color: #000000;
     padding: 20px;
@@ -93,6 +107,7 @@ a{
     overflow: hidden;
     opacity: 0;
     z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 .menu-caja a {
@@ -132,6 +147,7 @@ a{
 
 /*----------------------------------search--------------------------------*/
 .busqueda {
+    width: 30%;
     display: flex;
     align-items: center;
     border: 1px solid #a2a9b1; 
@@ -143,7 +159,6 @@ a{
 }
 
 #search-input {
-    width: 400px;
     flex: 1;                   
     border: none;              
     padding: 5px 8px 5px 28px;   
@@ -185,14 +200,16 @@ a{
 
 #trespuntitos{
     margin-top: 10px;
+    display: block;
+    position: relative;
 }
 
 .menu-cajatres{
     background-color: white;
     font-size: 15px;
     position: absolute;
-    top: 60px;
-    right: 180px;
+    top: 100%;
+    right: 0px;
     width: 200px;
     color: #000000;
     padding: 20px;
@@ -242,13 +259,14 @@ a:hover{
 /*---------------------lateral izquierda-----------------------------*/
 .left{
     background-color: white;
-    padding: 10px;
+    padding: 30px 50px 30px 10px;
+
 }
 
 #cont-iz{
     color: black;
-    font-size: 15px;
-
+    font-size: 14px;
+    
 
 }
 
@@ -269,12 +287,12 @@ a:hover{
 #txt-iz{
     margin: 0;
     margin-left: 25px;
-    padding: 6px 0;
+    padding: 5px 0;
 }
 /*----------acordion----------*/
 #acord-iz details summary {
     cursor: pointer;
-    margin: -10px 0;
+    margin: -12px 0;
     border: 1px solid transparent;
     border-radius: 3px;
     color: #3366cc;
@@ -288,27 +306,375 @@ a:hover{
 
 #acord-iz details summary::before {
     content: "";
-    width: 20px;       /* más grande que la flecha */
+    width: 20px;       
     height: 20px;
     background: url("img/flecha.png") no-repeat center;
-    background-size: 12px 12px;   /* la flecha sigue midiendo 12px */
+    background-size: 12px 12px;  
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 0 0 transparent;
-    border-radius: 1px;   /* 🔹 esquinas suavemente redondeadas */
+    border-radius: 1px;  
 }
 
 #acord-iz details[open] summary::before {
     transform: rotate(90deg);
-    box-shadow: 0 0 0 2px #3366cc;  /* ahora no se pega, se ve con espacio */
+    box-shadow: 0 0 0 2px #3366cc;  
 }
 
 #cont-acord-iz{
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin: 1px 0 1px 40px;
+    margin: 5px 0 5px 40px;
 }
 
 #cont-acord-iz p{
     margin: 0;
+}
+/*-------------------------------------------------centro----------------------------------------------------*/
+.center{
+    background-color: white;
+    color: #000;
+    padding: 5px;
+}
+
+#cont-centro{
+    height: 100%;
+}
+
+#cont-centro #tituloo{
+    font-size: 28.8px;
+    margin: 0 0 10px 0;
+    
+}
+
+#cont-centro hr{
+    margin: -8px 0 0 0;
+    
+}
+
+#cont-centro span{
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+}
+
+#sub{
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+#sub-iz{
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    
+}
+
+#h-desple {
+  position: relative;
+}
+
+.despl{
+    display: flex;
+    gap: 5px;
+    
+}
+
+
+
+.despl img{
+    width: 10px;
+    height: 10px;
+    transform: rotate(90deg);
+}
+
+#menu-caja-flecha{
+    background-color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    width: 200px;
+    color: #000000;
+    padding: 16px;
+    opacity: 0;
+    z-index: -1;
+}
+
+
+#despl:checked ~ #menu-caja-flecha{
+    opacity: 1;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    z-index: 1000;
+}
+
+.despl p{
+    margin: 12px 0;
+}
+
+label{
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    height: 40px; 
+    cursor: pointer;
+    
+}
+
+#despl:checked ~ label{
+  border-color: #3366cc; 
+}
+
+#menu-caja-flecha b{
+    font-size: 15px;
+}
+
+#menu-caja-flecha #mv{
+    font-size: 12px;
+    cursor: pointer;
+    margin: 12px 0 0 10px;
+}
+
+#hrc{
+    margin: 2px 0 0 0;
+}
+
+table{
+    font-family: sans-serif;
+    width: 100%;
+
+}
+
+table p{
+    font-size: 15px;
+}
+
+td{
+    
+    vertical-align: top;
+}
+
+table h1{
+    font-weight: bold;
+    margin: 0; 
+    text-align: center;
+    font-size: 20px;
+}
+
+#td-iz{
+    padding: 70px 0 0 0;
+}
+
+
+table #titul{
+    font-size: 17px;
+    margin: 0; 
+    text-align: center;
+}
+
+td.centro {
+  text-align: center;
+  font-size: 15px;
+  padding: 30px 30px 15px 30px;
+}
+
+.centro p{
+    margin: -1px 0 0 0;
+}
+
+#tb-iz {
+    border-collapse: collapse;
+    border: 1px solid #a2a9b1;
+}
+
+#tb-iz td {
+    border: none;
+    border-bottom: 1px solid #a2a9b1;
+}
+
+#tb-iz tr:last-child td {
+    border-bottom: none;
+}
+
+#td3, #td4 {
+    padding: 0;
+}
+
+#td3 p{
+    margin: 7px 0 7px 0;
+}
+
+#td4 p{
+    margin: 5px 0 5px 0;
+}
+
+#prom{
+    font-size: 10px;
+    font-style: italic;
+}
+
+#td-derecha{
+    padding: 5px 0 0 0;
+}
+
+
+#cont-td-derecha p{
+  line-height: 1.5;   
+  font-size: 16px;
+}
+/*----------------------------------lateral derecho--------------------------------*/
+.right{
+    background-color: white;
+    padding: 30px 50px 30px 10px;
+
+}
+
+.cont-der{
+    color: black;
+    font-size: 14px;
+    
+}
+
+#title-der{
+    display: flex;
+    gap: 15px;
+}
+
+#tabla-cont {
+    border-collapse: separate;
+    border-spacing: 1;
+}
+
+#tabla-dentro p{
+    font-size: 15px;
+    margin: 0 0;
+}
+
+.mw-wiki-logo-container{
+    width: 17px;  /* Cambia el ancho del icono */
+    height: 17px; /* Cambia la altura del icono */
+    fill: #007d8e; /* Esto es para el color, si quieres mantenerlo */
+}
+
+#mundito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 0;
+}
+
+ul li::marker {
+    font-size: 13px;
+}
+
+ul{
+    padding-left: 20px;
+    margin: 5px 0;
+}
+
+#parrafos{
+    line-height: 1.3; 
+}
+
+#mundito p{
+    line-height: 1.3; 
+}
+
+
+
+#coordenadas{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-align: right;
+    float: right;
+}
+
+#tituloo h1{
+    font-size: 28.8px;
+    margin: 0 0;
+}
+
+#tituloo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+/*responsive-----------------------------------------------------------------------*/
+
+/* Laptops medianas */
+@media (max-width: 1200px) {
+  .cuerpo {
+    grid-template-columns: 240px 1fr 240px; /* reduce laterales */
+  }
+}
+
+/* Tablets y celulares */
+@media (max-width: 992px) {
+  .cuerpo {
+    grid-template-columns: 0px 1fr 0px;  /* solo el contenido central */
+  }
+
+  .left, .right {
+    display: none;  /* oculta laterales */
+  }
+}
+
+@media (max-width: 1120px) {
+  .busqueda {
+    width: 32px;      /* cuadrada como icono */
+    height: 32px;
+    border: none;
+    justify-content: flex-end;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  #search-input {
+    display: none; /* se oculta el campo de texto */
+  }
+
+  #search-button {
+    text-indent: -9999px; /* oculta texto "Buscar" */
+    overflow: hidden;
+    border: none;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg')
+                no-repeat center;
+    background-size: 18px 18px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  
+  .busqueda:focus-within {
+    width: 250px; /* ancho expandido */
+    border: 1px solid #a2a9b1;
+  }
+
+  .busqueda:focus-within #search-input {
+    display: block;
+    flex: 1;
+    border: none;
+    padding: 5px 8px 5px 28px;
+    font-size: 14px;
+    outline: none;
+    background: none;
+  }
+
+  .busqueda:focus-within #search-button {
+    text-indent: -9999px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg')
+                no-repeat center;
+    background-size: 16px 16px;
+    border-left: 1px solid #a2a9b1;
+  }
+
+  
 }
